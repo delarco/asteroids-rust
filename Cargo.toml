@@ -1,0 +1,16 @@
+[package]
+name = "asteroids-rust"
+version = "0.1.0"
+edition = "2024"
+
+authors = ["Leandro Del Arco <leandrodelarco@outlook.com>"]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+description = "A sokoban with solver."
+repository = "https://github.com/delarco/asteroids-rust"
+keywords = ["asteroids", "bevy"]
+categories = ["games"]
+
+[dependencies]
+bevy = "0.20.0"
