@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Leandro Del Arco">
+    <meta name="description" content="A classic Asteroids-style arcade game written in Rust using the Bevy game engine.">
+
+    <meta property="og:title" content="Asteroids!">
+    <meta property="og:description" content="A classic Asteroids-style arcade game written in Rust using the Bevy game engine.">
+    <meta property="og:image" content="https://games.delarco.com.br/asteroids/screenshot-1793942711700.png">
+    <meta property="og:url" content="https://games.delarco.com.br/asteroids/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="https://games.delarco.com.br/asteroids/screenshot-1793942711700.png">
+    <meta name="twitter:title" content="Asteroids!">
+    <meta name="twitter:description" content="A classic Asteroids-style arcade game written in Rust using the Bevy game engine.">
+    <meta name="twitter:image" content="https://games.delarco.com.br/asteroids/screenshot-1793942711700.png">
+
+    <title>Asteroids!</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 10px 10px 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        canvas {
+            background-color: #444;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 1024px;
+            max-height: 768px;
+            /* object-fit: contain;  */
+            aspect-ratio: 4 / 3;
+        }
+
+        .neon-border {
+            border: 0.2rem solid #fff,;
+            border-radius: 2rem;
+            box-shadow: 0 0 .2rem #efc6ff,
+                        0 0 .2rem #efc6ff,
+                        0 0 2rem #bc13fe,
+                        0 0 0.8rem #bc13fe,
+                        0 0 2.8rem #bc13fe,
+                        inset 0 0 1.3rem #bc13fe; 
+        }
+    </style>
+
+    <script src="sound-fix.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0P4BW4D3Q"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E0P4BW4D3Q');
+    </script>
+</head>
+<body>
+    <canvas id="bevy-canvas" class="neon-border"></canvas>
+    <script type="module">
+        import init from './asteroids-rust.js';
+        init();
+    </script>
+</body>
+</html>
