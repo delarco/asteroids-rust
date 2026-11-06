@@ -31,6 +31,10 @@
             justify-content: center;
         }
 
+        #loading {
+            position: absolute;
+        }
+
         canvas {
             background-color: #444;
             margin: auto;
@@ -67,10 +71,27 @@
     </script>
 </head>
 <body>
+    <div id="loading">
+        <h2>Loading...</h2>
+    <div class="spinner"></div>
+    </div>
     <canvas id="bevy-canvas" class="neon-border"></canvas>
     <script type="module">
         import init from './asteroids-rust.js';
-        init();
+
+        const loading = document.getElementById('loading');
+
+        async function run() {
+            try {
+                await init(); 
+                loading.remove();
+            } catch (error) {
+                console.error("Error loading WASM:", error);
+                loading.textContent = "Failed to load game.";
+            }
+        }
+
+        run();
     </script>
 </body>
 </html>
